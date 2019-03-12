@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">Apartments E-Shop</span>
+
     <p class="navbar-text pull-right">
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <button type="button" class="btn btn-primary ">
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+    <button type="button" class="btn btn-primary ">
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  
+  
+    <button type="button" class="btn btn-primary ">
+     <%= link_to "Sign up", new_user_registration_path, :class => ''  %>
+    </button>
+    
+    <button type="button" class="btn btn-primary ">
+    <%= link_to "Login", new_user_session_path, :class => ''  %>
+    </button>
+              
+      </div>
+      </div>
+    </div>
 <% end %>
+</nav>
 </p>
     <title>OnlineShop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<div class = "jumbotron container">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -27,4 +45,6 @@
   <body>
     <%= yield %>
   </body>
+  </div>
+
 </html>
