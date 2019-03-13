@@ -53,6 +53,9 @@ Rails.application.configure do
   config.assets.quiet = true
   
   config.assets.compile=true
+  
+  config.action_mailer.default_url_options = { host: ENV['IP'],
+port: ENV['PORT'] }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

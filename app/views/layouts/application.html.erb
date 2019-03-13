@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    
+
     <div class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -20,6 +22,9 @@
     </ul>
   </div>
 </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
 
 <div class="container">
   <% flash.each do |key, value| %>
@@ -33,6 +38,16 @@
   </div>
 
   <%= yield %>
+  
+  <% if user_signed_in? %>
+<div>Signed in as... <%= current_user.email %>
+(<%= link_to 'Sign out', destroy_user_session_path,
+:method => :delete%>)
+</div>
+<% else %>
+<%= link_to 'Register', new_user_registration_path %> or
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
 </div>
 
   </body>

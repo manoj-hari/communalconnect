@@ -1,8 +1,17 @@
 class PollsController < ApplicationController
+  
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
 
   # GET /polls
   # GET /polls.json
+  
+  
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized  
+    end
+  end
+
   def index
     @polls = Poll.all
     
