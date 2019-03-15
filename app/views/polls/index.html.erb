@@ -13,20 +13,24 @@
   </thead>
 
   <tbody>
+    
     <% @polls.each do |poll| %>
     <div class="well">
       <h2><%=poll.topic%></h2>
-      <% for question in poll.vote_values %>
-      <li>
-        <%= question.title %>
-        </li>
-     <% end %>
+      <p>
+      <% if current_user %>
+        <%= link_to 'Participate!', poll_path(poll), class: 'btn btn-primary btn-lg block' %>
+      <% else %>
+        Please sign in via  to participate in this poll.
+      <% end %>
+    </p>
+     
       <tr>
         <div class="btn-group">
         <td><%= link_to 'Show', poll, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_poll_path(poll) , class: 'btn btn-default' %></td>
         <td><%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-        <td><%= link_to 'Participate!', poll_path(poll), class: 'btn btn-primary btn-lg block' %></td>
+        
         </div>
       </tr>
       </div>
