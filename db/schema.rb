@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_140449) do
+ActiveRecord::Schema.define(version: 2019_03_19_123049) do
 
   create_table "polls", force: :cascade do |t|
     t.text "topic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "door_no"
+    t.string "spouse_name"
+    t.integer "Number_of_Cars"
+    t.boolean "Intrested_in_events"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

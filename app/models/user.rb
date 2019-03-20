@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :votes, dependent: :destroy
          has_many :vote_values, through: :votes
+         has_one :profile
          
          def voted_for?(poll)
           vote_values.any? {|v| v.poll == poll }

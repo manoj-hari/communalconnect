@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :profiles
   devise_for :users
   get 'home/index'
+  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   resources :votes, only: [:create]
  
     resources :polls
