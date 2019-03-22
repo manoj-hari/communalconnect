@@ -24,6 +24,7 @@ class PollsController < ApplicationController
    @poll = Poll.includes(:vote_values).find_by_id(params[:id])
   end
 
+
   # GET /polls/new
   def new
     @poll = Poll.new

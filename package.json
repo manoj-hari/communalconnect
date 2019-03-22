@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "pollingapp",
+=======
+  "name": "OnlineShop",
+>>>>>>> ECOMMERCE
   "private": true,
   "dependencies": {}
 }

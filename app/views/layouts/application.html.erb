@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pollingapp</title>
+    <title>OnlineShop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,27 @@
 
   <body>
     
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{253168687685948}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
     <div class="navbar navbar-inverse">
   <div class="container">
@@ -41,17 +62,20 @@
   <br>
   <br>
   <br>
-  
+ <ul class="nav navbar-nav navbar-right"> 
   <% if user_signed_in? %>
 <div>Signed in as... <%= current_user.email %>
 (<%= link_to 'Sign out', destroy_user_session_path,
 :method => :delete%>)
-</div>
+
 <% else %>
 <%= link_to 'Register', new_user_registration_path %> or
 <%= link_to 'Sign in', new_user_session_path %>
-<% end %>
+    <li><%#= image_tag current_user.image_url, alt: current_user.name %></li>
+    <li><%#= link_to 'Logout', sign_out_path %></li>
+    <li><%= link_to 'Facebook Sign in', '/auth/facebook' %></li>
+  <% end %>
+</ul>
 </div>
-
   </body>
 </html>
