@@ -153,8 +153,8 @@ main {
   line-height: 53px;
   font-weight: 900;
   padding: 0 1rem;
-  color: #ffffff;
-  background: #3e313c;
+  color: #fffff;
+  background: #ddd0bc;
   border-bottom: 2px solid #372c36;
   float: left;
   cursor: pointer;
@@ -233,7 +233,7 @@ main {
 
 .unread {
   color: #ffffff;
-  background: #eb4d5c;
+  background: #631c21;
   border-radius: 9px;
   padding: 2px 9px;
   font-size: 0.8rem;
@@ -248,7 +248,7 @@ main {
 }
 
 .channel_prefix {
-  color: #b2d5c9;
+  color: #631c21;
 }
 
 .disclaimer {
@@ -271,7 +271,7 @@ main {
   border-radius: 0.2rem;
   width: 36px;
   height: 36px;
-  background-image: url(http://findicons.com/icon/download/102283/fh02/300/png);
+  background-image: url(https://image.flaticon.com/icons/svg/463/463794.svg);
   background-size: cover;
 }
 
@@ -324,7 +324,7 @@ main {
   border-radius: 0.2rem;
   width: 48px;
   height: 48px;
-  background-image: url(http://findicons.com/icon/download/102283/fh02/300/png);
+  background-image: url(https://image.flaticon.com/icons/svg/1581/1581776.svg);
   background-size: cover;
   margin-right: 8px;
 }
